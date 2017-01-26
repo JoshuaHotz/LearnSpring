@@ -1,0 +1,57 @@
+<uib-accordion close-others="true">
+  <div uib-accordion-group class="panel-default" heading="Adventure" is-open="true">
+    <div class="container col-sm-6">
+      <div class="row">
+        <div ng-repeat='tile in main.pokemonTiles track by $index' class="col-sm-4">
+          <div class='pokemon-tile' ng-click='main.tileClick(tile)'>
+            {{ $index }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div>
+        No pokemon here, better keep looking around.
+      </div>
+      <div>
+        <label>ID: </label>1 <label>HP: </label>1 <label>Attack: </label>1 
+      </div>
+    </div>
+  </div>
+  <div uib-accordion-group class="panel-default" heading="Create Pokemon">
+    <div class='col-lg-3'>
+      <div class="col-lg-2"><label>HP: </label></div>
+      <div class="col-lg-10"><input ng-model='main.new.hp' type='text'></div>
+      <div class="col-lg-2"><label>Attack: </label></div> 
+      <div class="col-lg-10"><input ng-model='main.new.attack' type='text'></div>
+      <div class="col-lg-1 end"><button ng-click='main.createPokemon()'>Create</button></div>
+    </div>
+    <div class='col-lg-9'>
+      <div uib-alert ng-if='main.new.success' class="alert-success">Pokemon {{main.new.id}} Created.</div>
+      <div uib-alert ng-if='main.new.success' class="alert-failure">Pokemon creation failed.</div>
+    </div>
+  </div>
+  <div uib-accordion-group class="panel-default" heading="Update Pokemon">
+    <div class="col-lg-1"><label>ID: </label></div>
+    <div class="col-lg-11"><input ng-model='main.update.id' type='text'></div>
+    <div class="col-lg-1"><label>HP: </label></div>
+    <div class="col-lg-11"><input ng-model='main.update.hp' type='text'></div>
+    <div class="col-lg-1"><label>Attack: </label></div> 
+    <div class="col-lg-11"><input ng-model='main.update.attack' type='text'></div>
+    <div class="col-lg-1 end"><button ng-click='main.updatePokemon()'>Update</button></div>
+  </div>
+  <div uib-accordion-group class="panel-default" heading="Delete Pokemon">
+    <div class="col-lg-1"><label>ID: </label></div> 
+    <div class="col-lg-11"><input ng-model='main.delete.id' type='text'></div>
+    <div class="col-lg-1 end"><button ng-click='main.deletePokemon()'>Delete</button></div>
+  </div>
+  <div uib-accordion-group class="panel-default" heading="Add Pokemon to a location">
+    <div class="col-lg-1"><label>ID: </label></div> 
+    <div class="col-lg-11"><input ng-model='main.add.id' type='text'></div>
+    <div class="col-lg-1"><label>X: </label></div>
+    <div class="col-lg-11"><input ng-model='main.add.x' type='text'></div>
+    <div class="col-lg-1"><label>Y: </label></div>
+    <div class="col-lg-11"><input ng-model='main.add.y' type='text'></div>
+    <div class="col-lg-1 end"><button ng-click='main.addPokemonLocation()'>Add</button></div>
+  </div>
+</uib-accordion>

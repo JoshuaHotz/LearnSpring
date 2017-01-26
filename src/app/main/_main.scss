@@ -1,0 +1,29 @@
+.container {
+    width: 320px;
+    height: 320px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-image: url(../assets/images/grass-background.png);
+}
+.pokemon-tile {
+    width: 80px;
+    height: 80px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    background-image: url(../assets/images/tall-grass.png);
+    cursor: url(http://www.rw-designer.com/cursor-extern.php?id=22253), auto;
+}
+.row {
+    margin-top: 24px;
+    margin-right: 0px;
+}
+.alert-success {
+    background-color:#dff0d8;
+    color:#3c763d;
+    border-color: #d6e9c6;
+}
+.alert-failure {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
